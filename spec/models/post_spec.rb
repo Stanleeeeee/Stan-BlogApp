@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   subject do
     user = User.new(name: 'Stan', photo: '_url_', bio: 'nigeria')
-    post = Post.create(title: 'baseLine', text: 'This is my post', comments_counter: 0, likes_counter: 0,
+    Post.create(title: 'baseLine', text: 'This is my post', comments_counter: 0, likes_counter: 0,
                        user_id: user.id)
   end
 
