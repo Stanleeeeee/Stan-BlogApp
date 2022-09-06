@@ -1,4 +1,6 @@
-#!/usr/bin/env ruby
+#rubocop:disable  Metrics/CyclomaticComplexity
 
-require_relative "../config/application"
-require "importmap/commands"
+require_relative '../config/application'
+require 'importmap/commands'
+
+# rubocop: enable  Metrics/CyclomaticComplexity
