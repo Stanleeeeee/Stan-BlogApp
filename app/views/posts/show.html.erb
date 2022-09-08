@@ -1,1 +1,8 @@
 <h1>Below is the details of a post: Comments and Likes</h1>
+<div class="border">
+    <h2>Post #<%= @post.id %> by <%= @user.name %></h2>
+    <%= render 'shared/_count-likes-comments', post: @post %>
+    <h2><%= @post.title %></h2>
+    <p><%= @post.text %></p>
+</div>
+<%= render 'shared/_list-comments', post: @post %>
