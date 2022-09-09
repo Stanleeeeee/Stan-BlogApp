@@ -17,16 +17,16 @@ RSpec.describe 'Posts', type: :request do
   end
 
   context 'GET #index' do
-    before(:each) { get '/users/1/posts/1' } # gets(:show, params: { id: 2 })
+    before(:each) { get '/users/1/posts/1' } # gets(:show, params: { id: 1 })
     it 'it renders succesfully' do
-      expect(response).to have_http_status(:ok)
+      expect(response).to have_http_status(:success)
     end
 
     it "it renders 'show' template" do
       expect(response).to render_template('show')
     end
-    it 'it shows "Below is the details of a post: Comments and Likes" correctly' do
-      expect(response.body).to include('Below is the details of a post: Comments and Likes')
+    it 'it shows "Here is a list of users" correctly' do
+      expect(response.body).to include('Details of a user')
     end
   end
 end

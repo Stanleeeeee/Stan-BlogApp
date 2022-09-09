@@ -15,13 +15,13 @@ RSpec.describe 'Users', type: :request do
     end
   end
 
-  context 'GET #show' do
-    before(:each) { get '/users/2' } # gets(:show, params: { id: 2 })
+  context 'GET /show' do
     it 'it renders succesfully' do
-      expect(response).to have_http_status(:ok)
+      expect(response).to have_http_status(:success)
     end
-    it "it renders 'show' template" do
-      expect(response).to render_template('show')
+    it 'it renders show template' do
+      get '/users/show'
+      expect(response).to render_template(:show)
     end
     it 'it shows Here the details of a user: Name, Photo, Bio, and Posts" correctly' do
       expect(response.body).to include('Here the details of a user: Name, Photo, Bio, and Posts')
