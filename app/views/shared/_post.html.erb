@@ -1,0 +1,10 @@
+<article class ="posts">
+  <h3 class="post-title">
+  <%= link_to(post.title, user_post_path(id: post.id, user_id: post.user_id)) %>
+  </h3>
+<p><%= truncate(post.text, length: 250) %></p>
+  <div class="post-infor">
+    <p class="comments">Comments: <%=post.comments_counter %></p>
+    <p class="likes">Likes: <%=post.likes_counter %></p>
+   </div>
+</article>
