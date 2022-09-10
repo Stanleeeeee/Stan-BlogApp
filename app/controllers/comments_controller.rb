@@ -17,5 +17,6 @@ private
   def comments_params
     params.require(:comment).permit(:text).tap do |comments_params|
     comments_params.require(:text)
+    end
   end
 end
