@@ -1,0 +1,15 @@
+<%= form_with model: @post do |f| %>
+    <% if @post.errors.any? %>
+       <ul class ="errors-decr">
+          <% @post.errors.full_messages.each do |errors| %>
+            <li><%= errors %></li>
+          <% end %>
+       </ul>
+    <% end %>
+  <%= f.hidden_field :user_id, value: @params ? @params['user_id'] : '' %>
+  <%= f.label :title, "Title:" %></br >
+  <%= f.text_field :title, placeholder: "Article title" %>
+  <%= f.label :text, "Article Description" %></br >
+  <%= f.text_area :text, placeholder: "Write article here..." %></br >
+  <%= f.submit "Submit post", disable_with: 'Submiting...' %>
+<% end %>

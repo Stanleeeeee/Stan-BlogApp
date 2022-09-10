@@ -1,4 +1,4 @@
-<h1>Below is the list of posts for a user</h1>
+
 <%= render partial:'shared/user', locals: {user: @user} %>
 <% @user_posts.each do |post| %>
 <%= render partial:'shared/post', locals: {post: post} %>
@@ -9,4 +9,5 @@
       </ul>
 <% end %>
 
-<button class="see-all">Pagination</button>
+<%= link_to "Add Post", new_user_post_path(@user), class: "see-all-post-btn" %>
+

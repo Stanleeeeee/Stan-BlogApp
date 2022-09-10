@@ -9,8 +9,24 @@
   </div>
   <p><%= @post.text %></p>
 </article>
+<%= form_for @like, url:post_likes_path(@post) do |f| %>
+  <%= f.hidden_field :user_id, value: @post.user_id %>
+  <%= f.hidden_field :post_id, value: @post.id %>
+  <%= f.button nil, class: "like_btn" do %>
+    <i class="fa-solid fa-thumbs-up"></i>
+  <% end %>
+  <% end %>
+
 <ul class="comments-ul">
   <% @post.recent_comments.each do |comment| %>
     <li><%= comment.user.name %>: <%= comment.text %>
   <% end %>
 </ul> 
+<h5>Add comment</h5>
+<%= form_for @comment, url:post_comments_path(@post) do |f| %>
+  <%= f.hidden_field :user_id, value: @post.user.id %>
+  <%= f.hidden_field :post_id, value: @post.id %>
+  <%= f.label :text %><br />
+  <%= f.text_area :text, placeholder:'What are your thoughts on this post?' %><br />
+  <%= f.submit "Submit comment", class:"see-all-post-btn", disable_with: 'Submiting Comment...' %>
+<% end %>
