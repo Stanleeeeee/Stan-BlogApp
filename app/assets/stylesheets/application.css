@@ -1,3 +1,27 @@
+:root {
+  --primary: #ddd;
+  --dark: rgb(211, 102, 0);
+  --light: #fff;
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  --link: #758085;
+  --comment: 6%;
+}
+
+.link-to {
+  text-decoration: underline;
+  color: var(--link);
+}
+
+a.link-to:hover {
+  color: var(--link);
+}
+
+.nav-list {
+  list-style: none;
+  padding: 10px 0;
+  color: aliceblue;
+}
+
 .posts {
   display: flex;
   flex-direction: column;
