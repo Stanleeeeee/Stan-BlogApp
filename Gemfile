@@ -3,6 +3,21 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
+gem 'cancancan'
+
+gem 'htmlbeautifier'
+
+gem 'letter_opener'
+
+# gem 'bullet', group: 'development'
+
+# add device for authentication
+gem 'devise'
+
+# linters installitions
+gem 'rubocop', '>= 1.0', '< 2.0'
+
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
 
@@ -53,8 +68,11 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'ffi'
-  gem 'rails-controller-testing'
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
   gem 'rspec-rails'
+  # Capybara, the library that allows us to interact with the browser using Ruby
+  gem 'capybara'
+  gem 'webdrivers'
 end
 
 group :development do
@@ -70,7 +88,5 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'webdrivers'
 end
