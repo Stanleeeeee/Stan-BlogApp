@@ -1,22 +1,13 @@
 
-<h1>Below is the list of posts for a user</h1>
-<%= render 'shared/_user', user: @user %>
-<% if @posts.any? %>
-    <div>
-        <% @posts.each do |post| %>
-            <div class="border">
-                <h2>Post #<%= post.id %></h2>
-                <p><%= post.title %></p>
-                <p>
-                    <%= post.text %>
-                </p>
-                <%= render 'shared/_count-likes-comments', post: post %>
-            </div>
-            <%= render 'shared/_five-recent-comments', comments: post.five_most_recent_comments %>
-        <% end %>
-    </div>
-    <% else %>
-    <p>
-        No posts yet.
-    </p>
+m
+<%= render partial:'shared/user', locals: {user: @user} %>
+<% @user_posts.each do |post| %>
+<%= render partial:'shared/post', locals: {post: post} %>
+<ul class="comments-ul">
+      <% post.recent_comments.each do |comment| %>
+        <li><%= comment.user.name %>: <%= comment.text %>
+      <% end %>
+      </ul>
 <% end %>
+
+<%= link_to "Add Post", new_user_post_path(@user), class: "see-all-post-btn" %>

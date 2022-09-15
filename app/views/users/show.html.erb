@@ -1,31 +1,12 @@
-<h1>Here the details of a user: Name, Photo, Bio, and Posts</h1>
-<%= render 'shared/user', user: @user %>
-<div class="border">
-    <h2>
-        Bio
-    </h2>
-    <p>
-        <%= @user.bio %>
-    </p>
+<h1>Details of a user</h1>
+<%= render partial: 'shared/user', locals: { user: @user }%>
+<div class='bio'>
+  <p>Bio</p>
+  <p><%= @user.bio %></p>
 </div>
-<% if @user.posts.any? %>
-    <div>
-        <% @user.three_most_recent_posts.each do |post| %>
-            <div class="posts border">
-                <h2>Post #<%= post.id %></h2>
-                <%= link_to post.title, user_post_path(@user, post) %>
-                <p>
-                    <%= post.text %>
-                </p>
-                <%= render 'shared/count-likes-comments', post: post %>
-            </div>
-        <% end %>
-    </div>
-<% else %>
-        <p>
-            This user has no posts.
-        </p>
+<% @recent_posts.each do |post| %>
+  <%= render partial: 'shared/post', locals: { post: post} %>
 <% end %>
-<button class="border">
-    <%= link_to 'See All Posts', user_posts_path(@user) %>
-</button>
+<div class="div-see-all">
+  <%= link_to("see all posts", user_posts_path(@user), class: "see-all-post-btn") %>
+</div>

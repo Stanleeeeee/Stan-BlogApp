@@ -1,0 +1,55 @@
+.user {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.img-div {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #000;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.user_profile {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.content {
+  width: 90%;
+  height: 100px;
+  padding: 12px;
+  border: 2px solid #000;
+}
+
+.bio {
+  width: auto;
+  height: 100px;
+  padding: 12px;
+  margin-top: 10px;
+  border: 2px solid #000;
+}
+
+.div-see-all {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.see-all-post-btn {
+  margin-top: 10px;
+  border: 1px solid #000;
+  padding: 5px;
+  box-shadow: 4px 4px 4px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+}
