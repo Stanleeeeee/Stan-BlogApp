@@ -1,3 +1,4 @@
+
 example_id                                         | status  | run_time        |
 -------------------------------------------------- | ------- | --------------- |
 ./spec/helpers/comments_helper_spec.rb[1:1]        | pending | 0.00003 seconds |
@@ -15,3 +16,4 @@ example_id                                         | status  | run_time        |
 ./spec/views/comments/create.html.erb_spec.rb[1:1] | pending | 0.00003 seconds |
 ./spec/views/comments/new.html.erb_spec.rb[1:1]    | pending | 0.0018 seconds  |
 ./spec/views/likes/create.html.erb_spec.rb[1:1]    | pending | 0.00003 seconds |
+

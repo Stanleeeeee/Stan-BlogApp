@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  def index
+  def index; end
 
-    @users = User.order(:name)
-  end
+  def show; end
 end
