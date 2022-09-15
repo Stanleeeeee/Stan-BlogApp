@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def index
-    before_action :authenticate_user!
     @users = User.order(:name)
   end
 
