@@ -1,5 +1,6 @@
 example_id                                     | status | run_time        |
 ---------------------------------------------- | ------ | --------------- |
+
 ./spec/models/comment_spec.rb[1:1]             | passed | 0.04126 seconds |
 ./spec/models/comment_spec.rb[1:2]             | passed | 0.01511 seconds |
 ./spec/models/like_spec.rb[1:1]                | passed | 0.31349 seconds |
@@ -22,3 +23,4 @@ example_id                                     | status | run_time        |
 ./spec/request/users_controller_spec.rb[1:2:1] | passed | 0.03594 seconds |
 ./spec/request/users_controller_spec.rb[1:2:2] | passed | 0.03423 seconds |
 ./spec/request/users_controller_spec.rb[1:2:3] | passed | 0.05973 seconds |
+
