@@ -1,1 +1,12 @@
 <h1>Here is a list of users</h1>
+<% if @users.any? %>
+    <div>
+        <% @users.each do |user| %>
+            <%= render 'shared/_user', user: user %>
+        <% end %>
+    </div>
+<% else %>
+    <p>
+        No users yet.
+    </p>
+<% end %>
