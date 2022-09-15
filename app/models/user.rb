@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :comments, foreign_key: 'user_id', class_name: 'Comment'
   has_many :likes, foreign_key: 'user_id', class_name: 'Like'
 
+  ROLES = %I[admin defaut].freeze
   after_save :recent_posts
 
   # validations
@@ -16,5 +17,9 @@ class User < ApplicationRecord
 
   def recent_posts
     posts.order(created_at: :desc).limit(3)
+  end
+
+  def is?(requested_role)
+    ROLES == requested_role.to_s
   end
 end
