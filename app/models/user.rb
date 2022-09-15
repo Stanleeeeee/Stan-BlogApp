@@ -10,7 +10,7 @@ class User < ApplicationRecord
   after_save :recent_posts
 
   # validations
-  validates :name, :bio, presence: true
+  validates :name, presence: true
   validates :email, uniqueness: true
   validates :posts_counter, numericality: { only_integer: true, greater_than: -1 }
 
