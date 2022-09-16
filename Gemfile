@@ -70,8 +70,6 @@ group :development, :test do
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
   gem 'rspec-rails'
   # Capybara, the library that allows us to interact with the browser using Ruby
-  gem 'capybara'
-  gem 'webdrivers'
 end
 
 group :development do
@@ -89,4 +87,6 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'selenium-webdriver'
+  gem "capybara"
+  gem "webdrivers"
 end
