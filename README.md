@@ -34,11 +34,23 @@ To setup linters on your local environment, please follow these steps.
 IDE(VSCode etc.), WSL(for Windows OS), for linters RuboCop
 
 
-## Author
+## Authors
+
+👤 **Ezeoke Stanley Ifeanyi**
+- GitHub: [@Stanley](https://github.com/Stanleeeeee).
+- Twitter: [@Stanley](https://twitter.com/Stanmega89)
+- LinkedIn: [Stanley](https://www.linkedin.com/in/stanley-ezeoke/)
 
 - GitHub: [@Stanley](https://github.com/Stanleeeeee).
 - Twitter: [@Stanley](https://twitter.com/Stanmega89)
 - LinkedIn: [Stanley](https://www.linkedin.com/in/stanley-ezeoke/)
+
+
+👤 **Richard Friday**
+
+- GitHub: [@Richez003](https://github.com/Richez003)
+- Twitter: [@richardfriday14](https://twitter.com/richardfriday14)
+- LinkedIn: [@LinkedIn](https://www.linkedin.com/in/richard-friday-54980718a)
 
 ## 🤝 Contributing
 
