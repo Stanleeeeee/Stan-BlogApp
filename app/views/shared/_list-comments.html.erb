@@ -1,0 +1,14 @@
+<div class="border comments">
+    <% if post.comments.any? %>
+        <h2>Comments</h2>
+        <% post.comments.each do |comment| %>
+            <div>
+                <p>
+                    Comment #<%= comment.id %>: <%= comment.text %>
+                </p>
+            </div>
+        <% end %>
+    <% else %>
+        <p>No comments yet.</p>
+    <% end %>
+</div>
