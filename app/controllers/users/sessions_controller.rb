@@ -1,5 +1,5 @@
 class Users::SessionsController < ApplicationController
-     protect_from_forgery with: :null_session
+  protect_from_forgery with: :null_session
 
   respond_to :json
 

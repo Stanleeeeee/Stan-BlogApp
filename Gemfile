@@ -75,10 +75,10 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'devise-jwt'
+  gem 'jwt'
   gem 'letter_opener_web', '~> 2.0'
   gem 'rack-cors'
   gem 'web-console'
-  gem 'jwt'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
