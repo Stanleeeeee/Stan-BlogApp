@@ -78,6 +78,7 @@ group :development do
   gem 'letter_opener_web', '~> 2.0'
   gem 'rack-cors'
   gem 'web-console'
+  gem 'jwt'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
