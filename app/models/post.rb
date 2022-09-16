@@ -1,9 +1,7 @@
-# post model class
 class Post < ApplicationRecord
   belongs_to :user, class_name: 'User'
   has_many :comments, dependent: :destroy, class_name: 'Comment'
   has_many :likes, dependent: :destroy, class_name: 'Like'
-
 
   # validations methods
   validates :title, presence: true, length: { in: 5..250 }
@@ -17,6 +15,6 @@ class Post < ApplicationRecord
   end
 
   def recent_comments
-    comments.limit(5).order(created_at: :desc)t
+    comments.limit(5).order(created_at: :desc)
   end
 end

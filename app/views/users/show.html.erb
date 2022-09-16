@@ -1,12 +1,32 @@
 <h1>Details of a user</h1>
-<%= render partial: 'shared/user', locals: { user: @user }%>
-<div class='bio'>
-  <p>Bio</p>
-  <p><%= @user.bio %></p>
-</div>
-<% @recent_posts.each do |post| %>
-  <%= render partial: 'shared/post', locals: { post: post} %>
-<% end %>
-<div class="div-see-all">
-  <%= link_to("see all posts", user_posts_path(@user), class: "see-all-post-btn") %>
-</div>
+<section class="py-4">
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="<%= @user.photo%>" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title display-6 fw-bold"><%= @user.name %></h5>
+          <p class="card-text"><%= @user.bio %></p>
+          <p class="card-text"><small class="text-muted">Number of posts: <%= @user.posts_counter || 0 %> <%= %></small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='posts mt-5'>
+    <% @user.recent_posts.each_with_index do |post,index| %>
+      <div class="post p-2 mb-4">
+        <h3 class="display-6"><%= post.title %></h3>
+        <p><%= post.text%></p>
+        <small><%= link_to "Details", user_post_path(@user.id,post.id), class: "link-to"%></small>
+        <div class="d-flex justify-content-end">
+          <span class="">Comments: <span class="value"><%= post.comments_counter || 0 %></span> </span>
+          <span class="float-right">, Likes:<span class="value"> <%= post.likes_counter || 0 %></span></span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "See all posts", user_posts_path(@user.id) , class: "link-to d-flex justify-content-center" %>
+</section>
+
