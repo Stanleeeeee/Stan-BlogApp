@@ -4,12 +4,8 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @post = Post.find(params[:post_id])
-    @user = User.where(id: @post.user_id)
-    @user.each do |user|
-      @comment = @post.comments.new(text: comments_params[:text], user_id: user.id, post_id: @post.id)
-    end
-    redirect_to user_posts_path(id: @post.id, user_id: @post.user_id) if @comment.save
+    @comment = Comment.new(comments_params)
+    redirect_to user_posts_path(id: @comment.post_id, user_id: @comment.user_id) if @comment.save
   end
 
   def destroy
@@ -30,8 +26,6 @@ class CommentsController < ApplicationController
   private
 
   def comments_params
-    params.require(:comment).permit(:text).tap do |comments_params|
-      comments_params.require(:text)
-    end
+    params.require(:comment).permit(:text, :post_id, :user_id)
   end
 end
