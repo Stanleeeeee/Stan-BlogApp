@@ -52,7 +52,6 @@ gem 'jbuilder'
 
 gem 'rswag-api'
 
-
 gem 'rswag-ui'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -84,8 +83,8 @@ group :development do
   gem 'jwt'
   gem 'letter_opener_web', '~> 2.0'
   gem 'rack-cors'
-  gem 'web-console'
   gem 'rswag-specs'
+  gem 'web-console'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
