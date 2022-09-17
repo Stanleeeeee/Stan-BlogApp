@@ -50,6 +50,11 @@ gem 'jbuilder'
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
+gem 'rswag-api'
+
+
+gem 'rswag-ui'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
@@ -80,6 +85,7 @@ group :development do
   gem 'letter_opener_web', '~> 2.0'
   gem 'rack-cors'
   gem 'web-console'
+  gem 'rswag-specs'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
