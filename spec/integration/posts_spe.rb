@@ -1,30 +1,42 @@
 require 'rails_helper'
-RSpec.describe 'Post', type: :feature do
-  before(:each) do
-    @user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos1', bio: 'Teacher from Mexico.')
-    @user.posts.create(title: 'Title', text: 'Body')
-    visit user_post_path(@user, @user.posts.first)
+
+RSpec.describe 'Post index', type: :system do
+  before :each do
+    @user = User.create(name: 'Tim', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Coach')
+    @post = Post.create(author: @user, title: 'Test', text: 'This is a test post')
+    Comment.create(author: @user, post: @post, text: 'Test Comment')
   end
-  context 'Post show page' do
-    it 'Should display post\s title' do
-      expect(page).to have_content('Title')
-    end
-    it 'Should display post author name' do
-      expect(page).to have_content('by Tom')
-    end
-    it 'should display post s comment counter' do
-      expect(page).to have_content('Comments: 0')
-    end
-    it 'should display post s likes counter' do
-      expect(page).to have_content('Likes: 0')
-    end
-    it 'Should display post\s text' do
-      expect(page).to have_content('Body')
-    end
-    it 'Should display comment user name' do
-      @user.posts.first.comments.create(text: 'Comment', author: @user)
-      visit user_post_path(@user, @user.posts.first)
-      expect(page).to have_content('Tom')
-    end
+
+  it 'shows the username' do
+    expect(page).to have_content(@user.name)
+  end
+
+  it 'shows the profile picture' do
+    expect(page).to have_content(@user.photo)
+  end
+
+  it 'shows number of posts' do
+    expect(page).to have_content('Number of posts: 1')
+  end
+
+  it 'shows post title' do
+    expect(page).to have_content(@post.title)
+  end
+
+  it 'shows post content' do
+    expect(page).to have_content(@post.text)
+  end
+
+  it 'shows comments' do
+    expect(page).to have_content('Test comment')
+  end
+
+  it 'shows likes' do
+    expect(page).to have_content('Number of likes: 0')
+  end
+
+  it 'redirects to the show page' do
+    click_link(@post.title)
+    expect(page).to have_content(@post.text)
   end
 end

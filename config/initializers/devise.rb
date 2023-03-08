@@ -303,6 +303,9 @@ Devise.setup do |config|
   #   include Turbolinks::Controller
   # end
 
+  config.jwt do |jwt|
+    jwt.secret = Rails.application.credentials.devise[:jwt_secret_key]
+  end
   # ==> Configuration for :registerable
 
   # When set to false, does not sign a user in automatically after their password is
