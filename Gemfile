@@ -70,13 +70,13 @@ group :development, :test do
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
   gem 'rspec-rails'
   # Capybara, the library that allows us to interact with the browser using Ruby
-  gem 'capybara'
-  gem 'webdrivers'
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'devise-jwt'
   gem 'letter_opener_web', '~> 2.0'
+  gem 'rack-cors'
   gem 'web-console'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
@@ -88,5 +88,7 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
